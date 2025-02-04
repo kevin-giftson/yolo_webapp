@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Detection using YOLOv8</title>
+    <style>
+        body {
+            color: white;
+            margin: 0;
+            padding: 0;
+            background-color: #d3d3d3; /* Set background color to black */
+        }
+
+        header.feature-box.top {
+            background-color: #f2f3f4;
+            color: black;
+            height: 100px;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header.feature-box.second {
+            background-color: #002147; /* Change background color to black */
+            height: 50px;
+            text-align: center;
+            margin-top: -25px;
+        }
+
+        .features {
+            background-color: black;
+            width: 900px;
+            height: 700px;
+            border-radius: 35px;
+            object-fit: contain;
+            margin: 20px;
+        }
+
+        section.col-sm {
+            background-color: black;
+            width: 1000px;
+            height: 650px;
+            border-radius: 35px;
+            object-fit: contain;
+            margin: 40px;
+        }
+
+        img {
+            width: 900px;
+            height: 600px;
+            border-radius: 35px;
+            object-fit: contain;
+            margin: 40px;
+        }
+
+        .new {
+            color: white; /* Set text color to white */
+            margin: 0;
+            padding: 10px;
+            background-color: black; /* Set background color to black */
+            margin: 0;
+            margin-top: -10px;
+        }
+
+        .message {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            display: {% if message %} block; {% else %} none; {% endif %} /* Show only if message exists */
+        }
+
+        .home-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<header class="feature-box top">
+    <h1><strong>Object Detection using YOLOv8</strong></h1>
+</header>
+<header class="feature-box second">
+    <h1><strong>Output Image</strong></h1>
+</header>
+
+<section class="col-sm">
+    <!-- Change 'image' to 'imagedetect' -->
+    <img src="{{ url_for('imagedetect') }}" alt="Upload image">
+</section>
+
+<section>
+    <div class="new">
+        <form method="POST" enctype="multipart/form-data"
+              style="align-content: center; text-align: center;display: flex;">
+            {{ form.hidden_tag() }}
+            {{ form.file(class_="custom-file-input") }}
+
+            <div>
+                <button type="submit" name="detect" value="x" class="btnCustom">
+                    Detect
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="message">
+        {{ message }}
+    </div>
+    <div class="home-link">
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+</section>
+
+</body>
+</html>
