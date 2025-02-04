@@ -25,6 +25,6 @@ Before running the app, ensure you have the following installed:
 ## Example Screenshots
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="screenshot/y1.png" alt="ChatBot" width="500" />
-  <img src="screenshot/y3.png" alt="Image Analyzer" width="500" />
+  <img src="screenshot/y1.png" alt="ChatBot" width="300" />
+  <img src="screenshot/y3.png" alt="Image Analyzer" width="300" />
 </div>
