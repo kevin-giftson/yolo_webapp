@@ -9,10 +9,10 @@ This is a web application built using **YOLO** (You Only Look Once) object detec
 
 ## Prerequisites
 Before running the app, ensure you have the following installed:
-- Python 3.x
+- Python 3.10
 - Flask
 - OpenCV
-- YOLOv5 or YOLOv3 weights
+- YOLOv8 weights
 
 ## Installation
 
